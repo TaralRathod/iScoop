@@ -1,0 +1,2 @@
+# iScoop
+News related application
