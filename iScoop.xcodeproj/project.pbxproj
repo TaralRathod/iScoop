@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		012F213C27BC055C006C6148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F213B27BC055C006C6148 /* AppDelegate.swift */; };
 		012F213E27BC055C006C6148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F213D27BC055C006C6148 /* SceneDelegate.swift */; };
-		012F214027BC055C006C6148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F213F27BC055C006C6148 /* ViewController.swift */; };
+		012F214027BC055C006C6148 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F213F27BC055C006C6148 /* NewsViewController.swift */; };
 		012F214327BC055C006C6148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012F214127BC055C006C6148 /* Main.storyboard */; };
 		012F214627BC055C006C6148 /* iScoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012F214427BC055C006C6148 /* iScoop.xcdatamodeld */; };
 		012F214827BC055E006C6148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012F214727BC055E006C6148 /* Assets.xcassets */; };
@@ -17,6 +17,17 @@
 		012F215627BC055E006C6148 /* iScoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F215527BC055E006C6148 /* iScoopTests.swift */; };
 		012F216027BC055E006C6148 /* iScoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F215F27BC055E006C6148 /* iScoopUITests.swift */; };
 		012F216227BC055E006C6148 /* iScoopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F216127BC055E006C6148 /* iScoopUITestsLaunchTests.swift */; };
+		01396C4827BC119E0014CD41 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C4727BC119E0014CD41 /* NetworkManager.swift */; };
+		01396C4B27BC32ED0014CD41 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C4A27BC32EC0014CD41 /* Resource.swift */; };
+		01396C4D27BC33150014CD41 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C4C27BC33150014CD41 /* NetworkErrors.swift */; };
+		01396C4F27BC333B0014CD41 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C4E27BC333B0014CD41 /* Result.swift */; };
+		01396C5127BC337A0014CD41 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5027BC337A0014CD41 /* NetworkProtocol.swift */; };
+		01396C5427BC33DF0014CD41 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5327BC33DF0014CD41 /* URLRequest+Extension.swift */; };
+		01396C5627BC36530014CD41 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5527BC36530014CD41 /* UIView+Extension.swift */; };
+		01396C5927BC3F2F0014CD41 /* HeighlightNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5827BC3F2F0014CD41 /* HeighlightNewsCell.swift */; };
+		01396C5B27BC3F440014CD41 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5A27BC3F440014CD41 /* NewsCell.swift */; };
+		01396C5D27BC3F7C0014CD41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5C27BC3F7C0014CD41 /* Constants.swift */; };
+		01396C6027BC427F0014CD41 /* TopHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01396C5F27BC427F0014CD41 /* TopHeadline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +51,7 @@
 		012F213827BC055C006C6148 /* iScoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iScoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012F213B27BC055C006C6148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		012F213D27BC055C006C6148 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		012F213F27BC055C006C6148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		012F213F27BC055C006C6148 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		012F214227BC055C006C6148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		012F214527BC055C006C6148 /* iScoop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iScoop.xcdatamodel; sourceTree = "<group>"; };
 		012F214727BC055E006C6148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +62,17 @@
 		012F215B27BC055E006C6148 /* iScoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iScoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		012F215F27BC055E006C6148 /* iScoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iScoopUITests.swift; sourceTree = "<group>"; };
 		012F216127BC055E006C6148 /* iScoopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iScoopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01396C4727BC119E0014CD41 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		01396C4A27BC32EC0014CD41 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		01396C4C27BC33150014CD41 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		01396C4E27BC333B0014CD41 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		01396C5027BC337A0014CD41 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		01396C5327BC33DF0014CD41 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
+		01396C5527BC36530014CD41 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		01396C5827BC3F2F0014CD41 /* HeighlightNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeighlightNewsCell.swift; sourceTree = "<group>"; };
+		01396C5A27BC3F440014CD41 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		01396C5C27BC3F7C0014CD41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01396C5F27BC427F0014CD41 /* TopHeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +123,15 @@
 		012F213A27BC055C006C6148 /* iScoop */ = {
 			isa = PBXGroup;
 			children = (
-				012F213B27BC055C006C6148 /* AppDelegate.swift */,
-				012F213D27BC055C006C6148 /* SceneDelegate.swift */,
-				012F213F27BC055C006C6148 /* ViewController.swift */,
+				01396C5E27BC42600014CD41 /* Modals */,
+				01396C5727BC3F060014CD41 /* Cells */,
+				01396C5227BC33B90014CD41 /* Extensions */,
+				01396C4927BC32990014CD41 /* Network */,
+				01396C4627BC11830014CD41 /* Utilities */,
+				01396C4527BC117A0014CD41 /* Managers */,
+				01396C4427BC11590014CD41 /* ViewModels */,
+				01396C4327BC114E0014CD41 /* ViewControllers */,
+				01396C4227BC11360014CD41 /* Delegates */,
 				012F214127BC055C006C6148 /* Main.storyboard */,
 				012F214727BC055E006C6148 /* Assets.xcassets */,
 				012F214927BC055E006C6148 /* LaunchScreen.storyboard */,
@@ -128,6 +156,83 @@
 				012F216127BC055E006C6148 /* iScoopUITestsLaunchTests.swift */,
 			);
 			path = iScoopUITests;
+			sourceTree = "<group>";
+		};
+		01396C4227BC11360014CD41 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				012F213B27BC055C006C6148 /* AppDelegate.swift */,
+				012F213D27BC055C006C6148 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		01396C4327BC114E0014CD41 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				012F213F27BC055C006C6148 /* NewsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		01396C4427BC11590014CD41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01396C4527BC117A0014CD41 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01396C4727BC119E0014CD41 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		01396C4627BC11830014CD41 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				01396C5C27BC3F7C0014CD41 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		01396C4927BC32990014CD41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				01396C4A27BC32EC0014CD41 /* Resource.swift */,
+				01396C4C27BC33150014CD41 /* NetworkErrors.swift */,
+				01396C4E27BC333B0014CD41 /* Result.swift */,
+				01396C5027BC337A0014CD41 /* NetworkProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		01396C5227BC33B90014CD41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01396C5327BC33DF0014CD41 /* URLRequest+Extension.swift */,
+				01396C5527BC36530014CD41 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01396C5727BC3F060014CD41 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01396C5827BC3F2F0014CD41 /* HeighlightNewsCell.swift */,
+				01396C5A27BC3F440014CD41 /* NewsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		01396C5E27BC42600014CD41 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				01396C5F27BC427F0014CD41 /* TopHeadline.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +366,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01396C5627BC36530014CD41 /* UIView+Extension.swift in Sources */,
 				012F214627BC055C006C6148 /* iScoop.xcdatamodeld in Sources */,
-				012F214027BC055C006C6148 /* ViewController.swift in Sources */,
+				012F214027BC055C006C6148 /* NewsViewController.swift in Sources */,
+				01396C4827BC119E0014CD41 /* NetworkManager.swift in Sources */,
+				01396C4D27BC33150014CD41 /* NetworkErrors.swift in Sources */,
+				01396C6027BC427F0014CD41 /* TopHeadline.swift in Sources */,
+				01396C4B27BC32ED0014CD41 /* Resource.swift in Sources */,
+				01396C5427BC33DF0014CD41 /* URLRequest+Extension.swift in Sources */,
+				01396C5127BC337A0014CD41 /* NetworkProtocol.swift in Sources */,
 				012F213C27BC055C006C6148 /* AppDelegate.swift in Sources */,
+				01396C5927BC3F2F0014CD41 /* HeighlightNewsCell.swift in Sources */,
+				01396C4F27BC333B0014CD41 /* Result.swift in Sources */,
+				01396C5D27BC3F7C0014CD41 /* Constants.swift in Sources */,
+				01396C5B27BC3F440014CD41 /* NewsCell.swift in Sources */,
 				012F213E27BC055C006C6148 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

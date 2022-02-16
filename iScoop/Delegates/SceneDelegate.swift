@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  iScoop
 //
-//  Created by Twinkle Rathod on 15/02/22.
+//  Created by Taral Rathod on 15/02/22.
 //
 
 import UIKit
