@@ -10,5 +10,7 @@ import Foundation
 protocol NetworkProtocol: AnyObject {
     func executeQuery<T>(_ resource: Resource,
                          result: @escaping ((Result<T>) -> Void)) where T: Codable
+    func downloadImage(_ resource: Resource,
+                       result: @escaping (_ imageData: Data?, _ error: Error? ) -> Void)
     func cancel()
 }

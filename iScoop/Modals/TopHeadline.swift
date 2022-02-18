@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TopHeadline {
+struct TopHeadline: Codable {
     var status: String?
     var totalResults: Int?
     var articles: [Article]?
 }
 
-struct Article {
+struct Article: Codable {
     var source: Source?
     var author: String?
     var title: String?
@@ -25,7 +25,7 @@ struct Article {
     
 }
 
-struct Source {
+struct Source: Codable {
     var id: String?
     var name: String?
 }

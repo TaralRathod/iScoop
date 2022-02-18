@@ -55,4 +55,11 @@ extension UIView {
     func stopShimmering() {
         self.layer.mask = nil
     }
+
+    func addBlurEffect() {
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blur.frame = self.bounds
+        blur.isUserInteractionEnabled = false
+        self.insertSubview(blur, at: 0)
+    }
 }

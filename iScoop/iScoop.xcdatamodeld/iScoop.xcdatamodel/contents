@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Articles" representedClassName="Articles" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="comments" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="descriptions" optional="YES" attributeType="String"/>
+        <attribute name="likes" optional="YES" attributeType="String"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <attribute name="urlToImage" optional="YES" attributeType="URI"/>
+        <relationship name="headline" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TopHeadlines" inverseName="articles" inverseEntity="TopHeadlines"/>
+        <relationship name="sources" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sources" inverseName="article" inverseEntity="Sources"/>
+    </entity>
+    <entity name="Sources" representedClassName="Sources" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Articles" inverseName="sources" inverseEntity="Articles"/>
+    </entity>
+    <entity name="TopHeadlines" representedClassName="TopHeadlines" syncable="YES" codeGenerationType="class">
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="totalResults" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Articles" inverseName="headline" inverseEntity="Articles"/>
+    </entity>
+    <elements>
+        <element name="TopHeadlines" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Articles" positionX="-54" positionY="0" width="128" height="194"/>
+        <element name="Sources" positionX="-27" positionY="99" width="128" height="74"/>
+    </elements>
 </model>

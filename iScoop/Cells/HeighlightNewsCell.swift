@@ -9,9 +9,10 @@ import UIKit
 
 class HeighlightNewsCell: UITableViewCell {
 
-    @IBOutlet weak var heighlightImageView: UIImageView!
+    @IBOutlet weak var heighlightImageView: EasyRendererImageView!
     @IBOutlet weak var highlightNewsLabel: UILabel!
-
+    @IBOutlet weak var gradientView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,16 +24,23 @@ class HeighlightNewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupUI(shouldBeLoading: Bool, modal: Article?) {
+    func setupUI(shouldBeLoading: Bool, modal: Articles?) {
+        guard let placeholder = UIImage(named: Constants.placeholderImage) else {return}
         if shouldBeLoading {
             startShimmerEffect()
-            heighlightImageView.setGradientBackground(topColor: .clear,
+            gradientView.setGradientBackground(topColor: .clear,
                                                       bottomColor: .black)
+            heighlightImageView.image = placeholder
         } else {
             stopShimmerEffect()
             guard let model = modal else {return}
-            heighlightImageView.image = UIImage.init(named: model.content ?? Constants.blankString)
             highlightNewsLabel.text = model.title ?? Constants.blankString
+            guard let url = modal?.urlToImage else {return}
+            heighlightImageView.getImageFor(url: url, placeholder: placeholder) { [weak self] image, _ in
+                DispatchQueue.main.async {
+                    self?.heighlightImageView.image = image
+                }
+            }
         }
     }
 

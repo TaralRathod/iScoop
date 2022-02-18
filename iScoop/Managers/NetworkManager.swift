@@ -16,44 +16,40 @@ class NetworkManager: NetworkProtocol {
     
     func executeQuery<T>(_ resource: Resource,
                          result: @escaping ((Result<T>) -> Void)) where T: Codable {
+        if Reachability.isConnectedToNetwork() {
+            let request = URLRequest(resource)
+            task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let httpResponse = response as? HTTPURLResponse {
+                    let actualResult = self.handleNetworkResponse(httpResponse, data: T.self)
+                    switch actualResult {
+                    case .success(let modal):
+                        guard let `data` = data else {
+                            result(.failure(NetworkError.noData))
+                            return
+                        }
+                        do {
+                            result(.success(try JSONDecoder().decode(modal.self, from: data)))
+                        } catch {
+                            result(.failure(NetworkError.serializationError))
+                        }
+                    case .failure(let error):
+                        result(.failure(error))
+                    }
+                }
+            }
+            task?.resume()
+        } else {
+            result(.failure(NetworkError.networkNotAvailable))
+        }
+    }
+
+    func downloadImage(_ resource: Resource, result: @escaping (Data?, Error?) -> Void) {
         let request = URLRequest(resource)
         task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let httpResponse = response as? HTTPURLResponse {
-                let actualResult = self.handleNetworkResponse(httpResponse, data: T.self)
-                switch actualResult {
-                case .success(let modal):
-                    guard let `data` = data else {
-                        result(.failure(NetworkError.noData))
-                        return
-                    }
-                    do {
-                        result(.success(try JSONDecoder().decode(modal.self, from: data)))
-                    } catch {
-                        result(.failure(NetworkError.serializationError))
-                    }
-                case .failure(let error):
-                    result(.failure(error))
-                }
-//                switch statusCode {
-//                case 200...299:
-//                    guard let `data` = data else {
-//                        result(.failure(NetworkError.noData))
-//                        return
-//                    }
-//                    do {
-//                        result(.success(try JSONDecoder().decode(T.self, from: data)))
-//                    } catch let error {
-//                        debugPrint(String(data: data, encoding: .utf8) ?? "nothing received")
-//                        result(.failure(error))
-//                    }
-//                case 400...410:
-//                    result(.failure(NetworkError.clientError))
-//                case 500...510:
-//                    result(.failure(NetworkError.serverError))
-//                default:
-//                    let error = NSError(domain: response.debugDescription, code: statusCode, userInfo: nil)
-//                    result(.failure(error))
-//                }
+            if error == nil {
+                result(data, nil)
+            } else {
+                result(nil, error)
             }
         }
         task?.resume()

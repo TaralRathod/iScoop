@@ -12,5 +12,6 @@ enum NetworkError: Error {
     case serializationError
     case clientError
     case serverError
+    case networkNotAvailable
     case failed
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class NewsCell: UITableViewCell {
 
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsImageView: EasyRendererImageView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -25,15 +25,25 @@ class NewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupUI(shouldBeLoading: Bool, modal: Article?) {
+    func setupUI(shouldBeLoading: Bool, modal: Articles?) {
+        guard let placeholder = UIImage(named: Constants.placeholderImage) else {return}
         if shouldBeLoading {
             startShimmerEffect()
+            newsImageView.image = placeholder
         } else {
             stopShimmerEffect()
             guard let model = modal else {return}
             headerLabel.text = model.title ?? Constants.blankString
-            detailLabel.text = model.description ?? Constants.blankString
-            timeLabel.text = model.publishedAt ?? Constants.blankString
+            detailLabel.text = model.descriptions ?? Constants.blankString
+            guard let time = modal?.publishedAt else {return}
+            let diffTime = time.difference()
+            timeLabel.text = diffTime
+            guard let url = modal?.urlToImage else {return}
+            newsImageView.getImageFor(url: url, placeholder: placeholder) { [weak self] image, _ in
+                DispatchQueue.main.async {
+                    self?.newsImageView.image = image
+                }
+            }
         }
     }
 
